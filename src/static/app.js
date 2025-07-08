@@ -10,10 +10,11 @@ document.addEventListener("DOMContentLoaded", () => {
       const response = await fetch("/activities");
       const activities = await response.json();
 
-      // Clear loading message
+      // Limpa mensagens e listas anteriores
       activitiesList.innerHTML = "";
+      activitySelect.innerHTML = '<option value="">-- Select an activity --</option>';
 
-      // Populate activities list
+      // Popula lista de atividades e dropdown
       Object.entries(activities).forEach(([name, details]) => {
         const activityCard = document.createElement("div");
         activityCard.className = "activity-card";
@@ -29,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         activitiesList.appendChild(activityCard);
 
-        // Add option to select dropdown
+        // Adiciona opção ao dropdown
         const option = document.createElement("option");
         option.value = name;
         option.textContent = name;
@@ -62,6 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
         messageDiv.textContent = result.message;
         messageDiv.className = "success";
         signupForm.reset();
+        fetchActivities(); // Atualiza lista após inscrição
       } else {
         messageDiv.textContent = result.detail || "An error occurred";
         messageDiv.className = "error";

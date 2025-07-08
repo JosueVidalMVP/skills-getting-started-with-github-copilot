@@ -1,0 +1,46 @@
+/* ...existing code... */
+.participants-section {
+  margin-top: 1.5em;
+  padding: 1em;
+  background: #f8fafc;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+}
+
+.participants-section h4 {
+  margin-bottom: 0.5em;
+  color: #2563eb;
+  font-size: 1.1em;
+}
+
+.participants-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.participant-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 0;
+}
+
+.delete-participant-btn {
+  background: none;
+  border: none;
+  color: #c62828;
+  font-size: 1.1em;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: color 0.2s;
+}
+
+.delete-participant-btn:hover {
+  color: #a31515;
+}
+
+.no-participants {
+  color: #64748b;
+  font-style: italic;
+}
+/* ...existing code... */
